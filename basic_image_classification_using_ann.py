@@ -3,9 +3,9 @@ import tensorflow as tf
 #tf.logging.set_verbosity(tf.logging.ERROR)
 #print('Using TensorFlow version', tf.__version__)
 
-"""# Task 2: The Dataset
+
 ### Import MNIST
-"""
+
 
 from tensorflow.keras.datasets import mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -36,7 +36,7 @@ y_train[0], y_train[6]
 #View all the unique lables
 set(y_train)
 
-"""# Task 3: One Hot Encoding
+"""# Task : One Hot Encoding
 After this encoding, every label will be converted to a list with 10 elements and the element at index to the corresponding class will be set to 1, rest will be set to 0:
 
 | original label | one-hot encoded label |
@@ -63,7 +63,7 @@ y_train_encoded.shape, y_test_encoded.shape
 
 y_train_encoded[0], y_train_encoded[6]
 
-"""# Task 4: Neural Networks
+"""# Task : Neural Networks
 
 ### Linear Equations
 
@@ -93,7 +93,7 @@ A simple, linear approach to solving hand-written image classification problem -
 
 This model is much more likely to solve the problem as it can learn more complex function mapping for the inputs and outputs in our dataset.
 
-# Task 5: Preprocessing the Examples
+# Task : Preprocessing the Examples
 
 ### Unrolling N-dimensional Arrays to Vectors
 """
@@ -122,7 +122,7 @@ x_test_norm = (x_test_reshaped-x_mean)/(x_std+epsilon)
 
 print(set(x_train_norm[0]))
 
-"""# Task 6: Creating a Model
+"""# Task : Creating a Model
 ### Creating the Model
 """
 
@@ -164,7 +164,7 @@ model.compile(
 )
 model.summary()
 
-"""# Task 7: Training the Model
+"""# Task : Training the Model
 
 ### Training the Model
 """
@@ -176,7 +176,7 @@ model.fit(x_train_norm,y_train_encoded,epochs=4)
 loss, accuracy = model.evaluate(x_test_norm,y_test_encoded)
 print("Test accuracy:",accuracy*100)
 
-"""# Task 8: Predictions
+"""# Task : Predictions
 
 ### Predictions on Test Set
 """
